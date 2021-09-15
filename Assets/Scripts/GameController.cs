@@ -11,13 +11,13 @@ public class GameController : MonoBehaviour
     public Text taskTx_1;
     public Text taskTx_2;
     int trashNum = 0;
-    int foodNum = 0;
+    int feedNum = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         taskTx_1.text = "ごみ拾い : " + trashNum + " / 10";
-        taskTx_2.text = "えさやり : " + foodNum + " / 5";
+        taskTx_2.text = "えさやり : " + feedNum + " / 5";
     }
 
     // Update is called once per frame
@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
 
     public void PlusFood()
     {
-
+        feedNum++;
+        taskTx_2.text = "えさやり : " + feedNum + " / 5";
     }
 }

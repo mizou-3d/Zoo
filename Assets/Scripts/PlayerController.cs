@@ -61,11 +61,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E) && other.gameObject.tag == "Trash")
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            gameController.PlusTrash();
-            Destroy(other.gameObject);
+            if (other.gameObject.tag == "Trash")
+            {
+                gameController.PlusTrash();
+                Destroy(other.gameObject);
+            }
+            if (other.gameObject.tag == "FeedArea")
+            {
+                gameController.PlusFood();
+                Destroy(other.gameObject);
+            }
+
         }
     }
+
 
 }
