@@ -43,4 +43,9 @@ public class GameController : MonoBehaviour
         feedNum++;
         taskTx_2.text = "えさやり : " + feedNum + " / 5";
     }
+
+    public void PlusTime()
+    {
+        timer += 15;
+    }
 }
