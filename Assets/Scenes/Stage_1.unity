@@ -431,7 +431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u3048\u3055\u3084\u308A : 0 / 10"
+  m_Text: "\u3048\u3055\u3084\u308A : 0 / 5"
 --- !u!222 &243974880
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1896,6 +1896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 818247486}
+  taskTx_1: {fileID: 1104761872}
+  taskTx_2: {fileID: 243974879}
 --- !u!4 &944126409933893733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3014345068429166607, guid: 0f46c0ef8b7744ed487d908f1f2ccafa, type: 3}

@@ -8,10 +8,16 @@ public class GameController : MonoBehaviour
     public Text timerText;
     float timer = 60;
 
+    public Text taskTx_1;
+    public Text taskTx_2;
+    int trashNum = 0;
+    int foodNum = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        taskTx_1.text = "ごみ拾い : " + trashNum + " / 10";
+        taskTx_2.text = "えさやり : " + foodNum + " / 5";
     }
 
     // Update is called once per frame
@@ -23,5 +29,17 @@ public class GameController : MonoBehaviour
         {
             timerText.text = "00.00";
         }
+    }
+
+    public void PlusTrash()
+    {
+        trashNum++;
+        taskTx_1.text = "ごみ拾い : " + trashNum + " / 10";
+
+    }
+
+    public void PlusFood()
+    {
+
     }
 }

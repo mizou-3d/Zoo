@@ -9,11 +9,12 @@ public class PlayerController : MonoBehaviour
     float y_sensi = 3;
     public new GameObject camera;
     public Vector3 cameraAngle;
+    GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && other.gameObject.tag == "Trash")
         {
+            gameController.PlusTrash();
             Destroy(other.gameObject);
         }
     }
