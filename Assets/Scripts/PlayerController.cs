@@ -57,5 +57,13 @@ public class PlayerController : MonoBehaviour
         cameraAngle.z = 0;
         camera.transform.localEulerAngles = cameraAngle;
     }
-    
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKeyDown(KeyCode.E) && other.gameObject.tag == "Trash")
+        {
+            Destroy(other.gameObject);
+        }
+    }
+
 }
