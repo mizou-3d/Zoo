@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ganbaruTime);
+        //Debug.Log(ganbaruTime);
         moveCon();
         cameraCon();
         if (!ganbareru)
@@ -55,6 +55,10 @@ public class PlayerController : MonoBehaviour
             }
             trans.position += trans.TransformDirection(Vector3.forward) * Input.GetAxis("Vertical") * playerSpeed*2;
             trans.position += trans.TransformDirection(Vector3.right) * Input.GetAxis("Horizontal") * playerSpeed*2;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            ganbareru = false;
         }
     }
 
