@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public new GameObject camera;
     public Vector3 cameraAngle;
     GameController gameController;
+    bool ganbareru;
+    float ganbaruTime = 5f;
+    public Image ganbaru_gauge;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +24,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(ganbaruTime);
         moveCon();
         cameraCon();
+        if (!ganbareru)
+        {
+            ganbaruTime += Time.deltaTime;
+            ganbaru_gauge.fillAmount += 0.2f * Time.deltaTime;
+            if(ganbaruTime >= 5)
+            {
+                ganbareru = true;
+                ganbaruTime = 5f;
+            }
+        }
     }
 
     void moveCon()
@@ -30,8 +45,14 @@ public class PlayerController : MonoBehaviour
         transform.position = trans.position;
         trans.position += trans.TransformDirection(Vector3.forward) * Input.GetAxis("Vertical") * playerSpeed;
         trans.position += trans.TransformDirection(Vector3.right) * Input.GetAxis("Horizontal") * playerSpeed;
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && ganbareru)
         {
+            ganbaruTime -= Time.deltaTime;
+            ganbaru_gauge.fillAmount -= 0.2f * Time.deltaTime;
+            if(ganbaruTime <= 0)
+            {
+                ganbareru = false;
+            }
             trans.position += trans.TransformDirection(Vector3.forward) * Input.GetAxis("Vertical") * playerSpeed*2;
             trans.position += trans.TransformDirection(Vector3.right) * Input.GetAxis("Horizontal") * playerSpeed*2;
         }
