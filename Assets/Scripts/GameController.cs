@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
         if(timer <= 0)
         {
             timerText.text = "00.00";
+            SceneManager.sceneLoaded += GameSceneLoaded;
             SceneManager.LoadScene("Result");
         }
     }
@@ -49,5 +50,14 @@ public class GameController : MonoBehaviour
     public void PlusTime()
     {
         timer += 15;
+    }
+
+    private void GameSceneLoaded(Scene next, LoadSceneMode mode)
+    {
+        var gameManager = GameObject.Find("ResultCanvas").GetComponent<ResultController>();
+        gameManager.trash = trashNum;
+        gameManager.feed = feedNum;
+
+        SceneManager.sceneLoaded -= GameSceneLoaded;
     }
 }
