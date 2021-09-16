@@ -20,19 +20,24 @@ public class ResultController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trashText.text = "ごみ拾い : " + trash + " / 10";
-        feedText.text = "えさやり : " + feed + " / 5";
+        trashText.text = "ごみ拾い : " + trash.ToString() + " / 10";
+        feedText.text = "えさやり : " + feed.ToString() + " / 5";
 
-        satisfactionLevel = (trash + feed) / 15;
-        satisfactionLevelText.text = (satisfactionLevel * 100) + "%";
+        satisfactionLevel = (trash + feed) / 15f;
+        //Debug.Log(satisfactionLevel);
+        satisfactionLevelText.text = (satisfactionLevel * 100).ToString("f1") + "%";
+        satisfactionLevelGaude.fillAmount = 0;
 
-        satisfactionLevelGaude.fillAmount = satisfactionLevel;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        satisfactionLevelGaude.fillAmount += 0.2f * Time.deltaTime;
+        if(satisfactionLevelGaude.fillAmount >= satisfactionLevel)
+        {
+            satisfactionLevelGaude.fillAmount = satisfactionLevel;
+        }
 
     }
 }

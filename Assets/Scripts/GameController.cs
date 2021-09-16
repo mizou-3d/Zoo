@@ -52,6 +52,11 @@ public class GameController : MonoBehaviour
         timer += 15;
     }
 
+    /*void ScoreCon()
+    {
+        SceneManager.sceneLoaded += GameSceneLoaded;
+    }*/
+
     private void GameSceneLoaded(Scene next, LoadSceneMode mode)
     {
         var gameManager = GameObject.Find("ResultCanvas").GetComponent<ResultController>();
