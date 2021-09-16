@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class GameController : MonoBehaviour
         if(timer <= 0)
         {
             timerText.text = "00.00";
+            SceneManager.LoadScene("Result");
         }
     }
 
