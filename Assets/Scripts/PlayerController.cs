@@ -40,9 +40,11 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetFloat("x", 0f);
             playerAnimator.SetFloat("y", 0f);
         }
+
         //Debug.Log(ganbaruTime);
         moveCon();
         cameraCon();
+
         if (!ganbareru)
         {
             ganbaruTime += Time.deltaTime;
@@ -52,6 +54,15 @@ public class PlayerController : MonoBehaviour
                 ganbareru = true;
                 ganbaruTime = 5f;
             }
+        }
+
+        if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("PickTrash") || playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Feed"))
+        {
+            playerSpeed = 0;
+        }
+        else
+        {
+            playerSpeed = 0.1f;
         }
     }
 
