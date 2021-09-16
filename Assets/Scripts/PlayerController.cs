@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     bool ganbareru;
     float ganbaruTime = 5f;
     public Image ganbaru_gauge;
+    public Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            playerAnimator.SetFloat("x", 1f);
+            playerAnimator.SetFloat("y", 0f);
+        }
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            playerAnimator.SetFloat("y", 1f);
+            playerAnimator.SetFloat("x", 0f);
+        }
+        else
+        {
+            playerAnimator.SetFloat("x", 0f);
+            playerAnimator.SetFloat("y", 0f);
+        }
         //Debug.Log(ganbaruTime);
         moveCon();
         cameraCon();
@@ -90,11 +106,13 @@ public class PlayerController : MonoBehaviour
         {
             if (other.gameObject.tag == "Trash")
             {
+                playerAnimator.SetTrigger("PickTrash");
                 gameController.PlusTrash();
-                Destroy(other.gameObject);
+                Destroy(other.gameObject, 2f);
             }
             if (other.gameObject.tag == "FeedArea")
             {
+                playerAnimator.SetTrigger("Feed");
                 gameController.PlusFood();
                 Destroy(other.gameObject);
             }

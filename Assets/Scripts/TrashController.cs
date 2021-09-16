@@ -15,4 +15,9 @@ public class TrashController : MonoBehaviour
     {
         
     }
+
+    public void DestoryTrash()
+    {
+        
+    }
 }

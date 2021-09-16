@@ -239,6 +239,7 @@ MonoBehaviour:
   camera: {fileID: 965539287}
   cameraAngle: {x: 0, y: 0, z: 0}
   ganbaru_gauge: {fileID: 1341647213}
+  playerAnimator: {fileID: 2652390562124494955}
 --- !u!54 &112068793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2229,5 +2230,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MIZOchan
       objectReference: {fileID: 0}
+    - target: {fileID: 3014345068438666665, guid: 0f46c0ef8b7744ed487d908f1f2ccafa, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 22c6438d727e6462c9732843010bc22d, type: 2}
+    - target: {fileID: 3014345068438666665, guid: 0f46c0ef8b7744ed487d908f1f2ccafa, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f46c0ef8b7744ed487d908f1f2ccafa, type: 3}
+--- !u!95 &2652390562124494955 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3014345068438666665, guid: 0f46c0ef8b7744ed487d908f1f2ccafa, type: 3}
+  m_PrefabInstance: {fileID: 2652390562124494954}
+  m_PrefabAsset: {fileID: 0}
