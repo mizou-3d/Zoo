@@ -25,21 +25,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        /*if (playerSpeed == 0.1f)
         {
             playerAnimator.SetFloat("x", 1f);
-            playerAnimator.SetFloat("y", 0f);
+            //playerAnimator.SetFloat("y", 0f);
         }
-        else if (Input.GetKey(KeyCode.Space))
+        else if (playerSpeed == 0.2f)
         {
             playerAnimator.SetFloat("y", 1f);
-            playerAnimator.SetFloat("x", 0f);
-        }
-        else
-        {
-            playerAnimator.SetFloat("x", 0f);
-            playerAnimator.SetFloat("y", 0f);
-        }
+            //playerAnimator.SetFloat("x", 0f);
+        }*/
 
         //Debug.Log(ganbaruTime);
         moveCon();
@@ -68,6 +63,19 @@ public class PlayerController : MonoBehaviour
 
     void moveCon()
     {
+        if (playerSpeed == 0.1f)
+        {
+            playerAnimator.SetFloat("Speed", playerSpeed);
+        }
+        else if (playerSpeed == 0.2f)
+        {
+            playerAnimator.SetFloat("Speed", playerSpeed);
+        }
+        else if(playerSpeed < 0.1f)
+        {
+            playerAnimator.SetFloat("Speed", 0f);
+        }
+
         Transform trans = transform;
         transform.position = trans.position;
         trans.position += trans.TransformDirection(Vector3.forward) * Input.GetAxis("Vertical") * playerSpeed;
