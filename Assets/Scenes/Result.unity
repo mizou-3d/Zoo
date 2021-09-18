@@ -563,8 +563,8 @@ MonoBehaviour:
   animalText: {fileID: 1002552942}
   satisfactionLevelText: {fileID: 590860704}
   satisfactionLevelGaude: {fileID: 831949123}
-  trash: 2
-  feed: 3
+  trash: 0
+  feed: 0
   animals: 0
 --- !u!1 &566419346
 GameObject:

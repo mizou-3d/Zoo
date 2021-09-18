@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    float playerSpeed = 0.1f;
+    float playerSpeed = 0.025f;
     float x_sensi= 3;
     float y_sensi = 3;
     public new GameObject camera;
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     float ganbaruTime = 5f;
     public Image ganbaru_gauge;
     public Animator playerAnimator;
+    Vector3 velocity;
 
     // Start is called before the first frame update
     void Start()
@@ -25,17 +26,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (playerSpeed == 0.1f)
-        {
-            playerAnimator.SetFloat("x", 1f);
-            //playerAnimator.SetFloat("y", 0f);
-        }
-        else if (playerSpeed == 0.2f)
-        {
-            playerAnimator.SetFloat("y", 1f);
-            //playerAnimator.SetFloat("x", 0f);
-        }*/
-
         //Debug.Log(ganbaruTime);
         moveCon();
         cameraCon();
@@ -63,15 +53,17 @@ public class PlayerController : MonoBehaviour
 
     void moveCon()
     {
-        if (playerSpeed == 0.1f)
+        playerAnimator.SetBool("is_Running", false);
+        velocity = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        if(velocity.magnitude > 0.1f)
         {
-            playerAnimator.SetFloat("Speed", playerSpeed);
+            playerAnimator.SetFloat("Speed", velocity.magnitude);
         }
-        else if (playerSpeed == 0.2f)
+        /*else if (velocity.magnitude > 1)
         {
-            playerAnimator.SetFloat("Speed", playerSpeed);
-        }
-        else if(playerSpeed < 0.1f)
+            playerAnimator.SetFloat("Speed", velocity.magnitude);
+        }*/
+        else
         {
             playerAnimator.SetFloat("Speed", 0f);
         }
@@ -82,6 +74,7 @@ public class PlayerController : MonoBehaviour
         trans.position += trans.TransformDirection(Vector3.right) * Input.GetAxis("Horizontal") * playerSpeed;
         if (Input.GetKey(KeyCode.LeftShift) && ganbareru)
         {
+            playerAnimator.SetBool("is_Running", true);
             ganbaruTime -= Time.deltaTime;
             ganbaru_gauge.fillAmount -= 0.2f * Time.deltaTime;
             if(ganbaruTime <= 0)
