@@ -7,7 +7,8 @@ public class StrangerController : MonoBehaviour
 {
 
     Transform target;
-    //float speed = 2.0f;
+    float timer = 0;
+    bool gohome = false;
 
     NavMeshAgent agent;
     public Animator strangerAnimator;
@@ -41,6 +42,12 @@ public class StrangerController : MonoBehaviour
     void Update()
     {
         agent.SetDestination(target.transform.position);
+        if (timer >= 10f || gohome)
+        {
+            strangerAnimator.SetBool("isOpen", false);
+            target = GameObject.Find("BackPos").transform;
+            timer = 0;
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -48,6 +55,15 @@ public class StrangerController : MonoBehaviour
         if(other.gameObject.tag == "Door")
         {
             strangerAnimator.SetBool("isOpen", true);
+            timer += Time.deltaTime;
+        }
+        if(other.gameObject.name == "BackPos")
+        {
+            Destroy(this.gameObject);
+        }
+        if(other.gameObject.tag == "Player" && Input.GetKey(KeyCode.Q))
+        {
+            gohome = true;
         }
     }
 }
