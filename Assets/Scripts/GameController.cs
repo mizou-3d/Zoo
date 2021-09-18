@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public Text timerText;
-    float timer = 60;
+    float timer = 120;
 
     public Text taskTx_1;
     public Text taskTx_2;

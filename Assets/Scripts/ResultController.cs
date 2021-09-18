@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ResultController : MonoBehaviour
 {
@@ -39,5 +40,9 @@ public class ResultController : MonoBehaviour
             satisfactionLevelGaude.fillAmount = satisfactionLevel;
         }
 
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene("Stage_1");
+        }
     }
 }

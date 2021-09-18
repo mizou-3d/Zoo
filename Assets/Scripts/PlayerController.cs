@@ -59,10 +59,6 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetFloat("Speed", velocity.magnitude);
         }
-        /*else if (velocity.magnitude > 1)
-        {
-            playerAnimator.SetFloat("Speed", velocity.magnitude);
-        }*/
         else
         {
             playerAnimator.SetFloat("Speed", 0f);
@@ -131,6 +127,4 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
-
 }
