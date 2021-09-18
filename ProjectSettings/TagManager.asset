@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trash
   - FeedArea
+  - Door
   layers:
   - Default
   - TransparentFX

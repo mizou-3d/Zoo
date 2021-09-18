@@ -5,16 +5,17 @@ using UnityEngine.AI;
 
 public class StrangerController : MonoBehaviour
 {
-    GameObject[] doorPositions;
 
     Transform target;
     //float speed = 2.0f;
 
     NavMeshAgent agent;
+    public Animator strangerAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject[] doorPositions = new GameObject[5];
         doorPositions[0] = GameObject.Find("DoorPos1");
         doorPositions[1] = GameObject.Find("DoorPos2");
         doorPositions[2] = GameObject.Find("DoorPos3");
@@ -30,12 +31,23 @@ public class StrangerController : MonoBehaviour
             target = doorPositions[Random.Range(2, 5)].transform;
         }
 
+        //target = doorPositions[Random.Range(0, doorPositions.Length)].transform;
+
         agent = GetComponent<NavMeshAgent>();
+        strangerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         agent.SetDestination(target.transform.position);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Door")
+        {
+            strangerAnimator.SetBool("isOpen", true);
+        }
     }
 }
