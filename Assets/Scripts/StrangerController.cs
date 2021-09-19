@@ -46,7 +46,6 @@ public class StrangerController : MonoBehaviour
         {
             strangerAnimator.SetBool("isOpen", false);
             target = GameObject.Find("BackPos").transform;
-            timer = 0;
         }
     }
 
