@@ -35,7 +35,7 @@ public class StrangerController : MonoBehaviour
         //target = doorPositions[Random.Range(0, doorPositions.Length)].transform;
 
         agent = GetComponent<NavMeshAgent>();
-        strangerAnimator = GetComponent<Animator>();
+        //strangerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame

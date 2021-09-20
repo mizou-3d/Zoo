@@ -10,7 +10,7 @@ public class StrangerSpawnerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Generate", 20, 20);
+        InvokeRepeating("Generate", 20, 30);
     }
 
     // Update is called once per frame
