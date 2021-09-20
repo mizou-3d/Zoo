@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    float playerSpeed = 0.025f;
+    float playerSpeed = 0.05f;
     float x_sensi= 3;
     float y_sensi = 3;
     public new GameObject camera;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            playerSpeed = 0.1f;
+            playerSpeed = 0.05f;
         }
     }
 
