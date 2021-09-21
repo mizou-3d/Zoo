@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        taskTx_1.text = "ごみ拾い : " + trashNum + " / 10";
+        taskTx_1.text = "ゴミひろい : " + trashNum + " / 10";
         taskTx_2.text = "えさやり : " + feedNum + " / 5";
     }
 
@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     public void PlusTrash()
     {
         trashNum++;
-        taskTx_1.text = "ごみ拾い : " + trashNum + " / 10";
+        taskTx_1.text = "ゴミひろい : " + trashNum + " / 10";
 
     }
 

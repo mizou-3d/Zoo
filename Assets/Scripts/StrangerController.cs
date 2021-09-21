@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class StrangerController : MonoBehaviour
 {
-
     Transform target;
     float timer = 0;
     bool gohome = false;
@@ -16,6 +15,7 @@ public class StrangerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         GameObject[] doorPositions = new GameObject[5];
         doorPositions[0] = GameObject.Find("DoorPos1");
         doorPositions[1] = GameObject.Find("DoorPos2");
