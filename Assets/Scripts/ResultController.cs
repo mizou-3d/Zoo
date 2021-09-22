@@ -21,7 +21,7 @@ public class ResultController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trashText.text = "ごみ拾い : " + trash.ToString() + " / 10";
+        trashText.text = "ゴミひろい : " + trash.ToString() + " / 10";
         feedText.text = "えさやり : " + feed.ToString() + " / 5";
 
         satisfactionLevel = (trash + feed) / 15f;
