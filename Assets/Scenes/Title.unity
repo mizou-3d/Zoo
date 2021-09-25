@@ -1121,14 +1121,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
-    m_MaxSize: 60
+    m_MaxSize: 70
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: ZooKeeper
+  m_Text: ZooVisitors
 --- !u!222 &1550834375
 CanvasRenderer:
   m_ObjectHideFlags: 0
