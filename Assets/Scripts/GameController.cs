@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(start_timer);
+        //Debug.Log(start_timer);
         start_timer -= Time.deltaTime;
         if (start_timer <= 3)
         {

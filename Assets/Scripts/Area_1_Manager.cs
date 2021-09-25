@@ -19,8 +19,10 @@ public class Area_1_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("私は不審者。");
         if (goOut_1)
         {
+            Debug.Log("unchi");
             goTimer += Time.deltaTime;
             while(i < animals_1.Length)
             {

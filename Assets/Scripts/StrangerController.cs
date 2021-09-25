@@ -11,17 +11,18 @@ public class StrangerController : MonoBehaviour
 
     NavMeshAgent agent;
     public Animator strangerAnimator;
+    GameObject backPosition;
+    GameObject[] doorPositions = new GameObject[5];
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        GameObject[] doorPositions = new GameObject[5];
         doorPositions[0] = GameObject.Find("DoorPos1");
         doorPositions[1] = GameObject.Find("DoorPos2");
         doorPositions[2] = GameObject.Find("DoorPos3");
         doorPositions[3] = GameObject.Find("DoorPos4");
         doorPositions[4] = GameObject.Find("DoorPos5");
+        backPosition = GameObject.Find("BackPos");
 
         if (this.transform.position.x < 0)
         {
@@ -45,7 +46,7 @@ public class StrangerController : MonoBehaviour
         if (timer >= 10f || gohome)
         {
             strangerAnimator.SetBool("isOpen", false);
-            target = GameObject.Find("BackPos").transform;
+            target = backPosition.transform;
         }
     }
 
