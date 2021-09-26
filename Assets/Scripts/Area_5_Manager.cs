@@ -8,6 +8,8 @@ public class Area_5_Manager : MonoBehaviour
     bool goOut_5 = false;
     int i = 0;
     float goTimer = 0;
+    float stayTimer;
+    //bool disappear;
 
     // Start is called before the first frame update
     void Start()
@@ -21,27 +23,24 @@ public class Area_5_Manager : MonoBehaviour
         if (goOut_5)
         {
             goTimer += Time.deltaTime;
-            while(i < animals_5.Length)
+            if (goTimer >= 10)
             {
-                if(goTimer % 10 == 0)
-                {
-                    Dead();
-                }
+                Destroy(animals_5[i]);
+                i++;
+                goTimer = 0;
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Stranger")
         {
-            goOut_5 = true;
+            stayTimer += Time.deltaTime;
+            if (stayTimer >= 10)
+            {
+                goOut_5 = true;
+            }
         }
-    }
-
-    void Dead()
-    {
-        Destroy(animals_5[i]);
-        i++;
     }
 }

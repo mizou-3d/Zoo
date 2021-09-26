@@ -8,6 +8,8 @@ public class Area_3_Manager : MonoBehaviour
     bool goOut_3 = false;
     int i = 0;
     float goTimer = 0;
+    float stayTimer;
+    //bool disappear;
 
     // Start is called before the first frame update
     void Start()
@@ -18,30 +20,28 @@ public class Area_3_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("私は不審者。");
         if (goOut_3)
         {
             goTimer += Time.deltaTime;
-            while(i < animals_3.Length)
+            if (goTimer >= 10)
             {
-                if(goTimer % 10 == 0)
-                {
-                    Dead();
-                }
+                Destroy(animals_3[i]);
+                i++;
+                goTimer = 0;
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Stranger")
         {
-            goOut_3 = true;
+            stayTimer += Time.deltaTime;
+            if (stayTimer >= 10)
+            {
+                goOut_3 = true;
+            }
         }
-    }
-
-    void Dead()
-    {
-        Destroy(animals_3[i]);
-        i++;
     }
 }
