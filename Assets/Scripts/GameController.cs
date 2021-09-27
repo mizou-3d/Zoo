@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] AudioSource[] audioSource;
+    [SerializeField] AudioClip count;
+
     public Text timerText;
     float timer = 120;
 
@@ -34,6 +37,7 @@ public class GameController : MonoBehaviour
         if (start_timer <= 3)
         {
             start_countDown.text = "3";
+            //audioSource.PlayOneShot();
         }
         if(start_timer <= 2)
         {
@@ -54,6 +58,7 @@ public class GameController : MonoBehaviour
         }
         if (isPlaying)
         {
+            //audioSource[1].Play();
             timer -= Time.deltaTime;
             timerText.text = timer.ToString("f2");
             if (timer <= 0)

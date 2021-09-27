@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 8837405686510419406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.6, y: 0.87, z: -2.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4221827419505450215}
   m_Father: {fileID: 0}
@@ -99,12 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d12b456a1244580a509e577595d932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorPositions:
-  - {fileID: 2729179189947982866, guid: aa029afc04e304f91aa98096ce0b9e58, type: 3}
-  - {fileID: 2162905092544858326, guid: 3f259353359524036924309b868db414, type: 3}
-  - {fileID: 1595268570684370948, guid: 6f8734ed5d4f24097840ad43f2a7936c, type: 3}
-  - {fileID: 5186667282332183924, guid: ba81179ac17954eedb968296a642bf4d, type: 3}
-  - {fileID: 2933346664577744836, guid: d26bf157676f645f49d6b110f1cb763e, type: 3}
   strangerAnimator: {fileID: 4221827419498509769}
 --- !u!195 &3462331062703181432
 NavMeshAgent:
