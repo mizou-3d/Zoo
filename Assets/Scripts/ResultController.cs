@@ -21,10 +21,12 @@ public class ResultController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animals = Area_1_Manager.animal1 + Area_2_Manager.animal2 + Area_3_Manager.animal3 + Area_4_Manager.animal4 + Area_5_Manager.animal5;
         trashText.text = "ゴミひろい : " + trash.ToString() + " / 10";
         feedText.text = "えさやり : " + feed.ToString() + " / 5";
+        animalText.text = "どうぶつ : " + animals.ToString() + " / 28";
 
-        satisfactionLevel = (trash + feed) / 15f;
+        satisfactionLevel = (trash + feed + animals) / 43f;
         //Debug.Log(satisfactionLevel);
         satisfactionLevelText.text = (satisfactionLevel * 100).ToString("f1") + "%";
         satisfactionLevelGaude.fillAmount = 0;
@@ -42,7 +44,7 @@ public class ResultController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("Stage_1");
+            SceneManager.LoadScene("Title");
         }
     }
 }

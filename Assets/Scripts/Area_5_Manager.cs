@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Area_5_Manager : MonoBehaviour
 {
-    public GameObject[] animals_5;
+    public List<GameObject> animals_5;
     bool goOut_5 = false;
-    int i = 0;
     float goTimer = 0;
     float stayTimer;
-    //bool disappear;
+    public static int animal5;
+    [SerializeField] GameObject mark;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +25,12 @@ public class Area_5_Manager : MonoBehaviour
             goTimer += Time.deltaTime;
             if (goTimer >= 10)
             {
-                Destroy(animals_5[i]);
-                i++;
+                Destroy(animals_5[0]);
+                animals_5.RemoveAt(0);
                 goTimer = 0;
             }
         }
+        animal5 = animals_5.Count;
     }
 
     private void OnTriggerStay(Collider other)
@@ -40,7 +41,13 @@ public class Area_5_Manager : MonoBehaviour
             if (stayTimer >= 10)
             {
                 goOut_5 = true;
+                mark.SetActive(true);
             }
+        }
+        if (other.gameObject.tag == "Player" || Input.GetKeyDown(KeyCode.Z))
+        {
+            goOut_5 = false;
+            mark.SetActive(false);
         }
     }
 }
