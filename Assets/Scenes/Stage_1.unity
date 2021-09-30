@@ -1682,7 +1682,7 @@ MonoBehaviour:
   - {fileID: 873119019}
   - {fileID: 1064442215}
   - {fileID: 1217131146}
-  mark: {fileID: 181470118}
+  mark3: {fileID: 181470118}
   alart: {fileID: 68911638}
 --- !u!82 &68911638
 AudioSource:
@@ -2617,7 +2617,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 965539287}
   cameraAngle: {x: 0, y: 0, z: 0}
-  ganbaru_gauge: {fileID: 1341647213}
   playerAnimator: {fileID: 2652390562124494955}
 --- !u!54 &112068793
 Rigidbody:
@@ -8583,7 +8582,7 @@ GameObject:
   - component: {fileID: 549393991}
   - component: {fileID: 549393990}
   - component: {fileID: 549393992}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8606,7 +8605,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -320, y: 83}
+  m_AnchoredPosition: {x: -311, y: -133}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549393990
@@ -13335,7 +13334,7 @@ MonoBehaviour:
   - {fileID: 826415399}
   - {fileID: 294822652}
   - {fileID: 1863598787}
-  mark: {fileID: 1052476197}
+  mark2: {fileID: 1052476197}
   alart: {fileID: 930330309}
 --- !u!82 &930330309
 AudioSource:
@@ -13935,7 +13934,7 @@ GameObject:
   - component: {fileID: 990257052}
   - component: {fileID: 990257051}
   - component: {fileID: 990257050}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: MiniMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15161,7 +15160,7 @@ MonoBehaviour:
   - {fileID: 52491364}
   - {fileID: 1108078173}
   - {fileID: 1332561988}
-  mark: {fileID: 20355559}
+  mark5: {fileID: 20355559}
   alart: {fileID: 1065155041}
 --- !u!82 &1065155041
 AudioSource:
@@ -19531,7 +19530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1435035303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21076,7 +21075,7 @@ MonoBehaviour:
   - {fileID: 21938854}
   - {fileID: 578499999}
   - {fileID: 703727604}
-  mark: {fileID: 1674336932}
+  mark4: {fileID: 1674336932}
   alart: {fileID: 1577034782}
 --- !u!82 &1577034782
 AudioSource:
@@ -29406,7 +29405,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b1cabbbd8ab0548639a71831f2505b5d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -29502,7 +29501,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8c3e7cfeb30234eaeb7705e759736ea2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.07
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -31239,7 +31238,7 @@ MonoBehaviour:
   - {fileID: 24037775}
   - {fileID: 1703744784}
   - {fileID: 1524745812}
-  mark: {fileID: 1776148434}
+  mark1: {fileID: 1776148434}
   alart: {fileID: 2729179189406437617}
 --- !u!4 &2729179189406437612
 Transform:

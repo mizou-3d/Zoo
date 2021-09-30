@@ -9,7 +9,7 @@ public class Area_1_Manager : MonoBehaviour
     float goTimer = 0;
     float stayTimer;
     public static int animal1;
-    [SerializeField] GameObject mark;
+    [SerializeField] GameObject mark1;
     [SerializeField] AudioSource alart;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class Area_1_Manager : MonoBehaviour
     void Update()
     {
         //Debug.Log("私は不審者。");
-        if (goOut_1)
+        if (goOut_1 && animals_1.Count > 0)
         {
             goTimer += Time.deltaTime;
                 if(goTimer >= 5)
@@ -43,7 +43,7 @@ public class Area_1_Manager : MonoBehaviour
             if (stayTimer >= 10)
             {
                 goOut_1 = true;
-                mark.SetActive(true);
+                mark1.SetActive(true);
                 alart.Play();
                 stayTimer = 0;
             }
@@ -51,7 +51,7 @@ public class Area_1_Manager : MonoBehaviour
         if(other.gameObject.tag == "Player" || Input.GetKeyDown(KeyCode.Z))
         {
             goOut_1 = false;
-            mark.SetActive(false);
+            mark1.SetActive(false);
             alart.Stop();
         }
     }

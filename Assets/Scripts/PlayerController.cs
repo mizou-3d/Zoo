@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 cameraAngle;
     GameController gameController;
     bool ganbareru;
-    float ganbaruTime = 5f;
-    public Image ganbaru_gauge;
+    //float ganbaruTime = 5f;
+    //public Image ganbaru_gauge;
     public Animator playerAnimator;
     Vector3 velocity;
 
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
             cameraCon();
         }
 
-        if (!ganbareru)
+        /*if (!ganbareru)
         {
             ganbaruTime += Time.deltaTime;
             ganbaru_gauge.fillAmount += 0.2f * Time.deltaTime;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
                 ganbareru = true;
                 ganbaruTime = 5f;
             }
-        }
+        }*/
 
         if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("PickTrash") || playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Feed"))
         {
@@ -70,22 +70,22 @@ public class PlayerController : MonoBehaviour
         transform.position = trans.position;
         trans.position += trans.TransformDirection(Vector3.forward) * Input.GetAxis("Vertical") * playerSpeed;
         trans.position += trans.TransformDirection(Vector3.right) * Input.GetAxis("Horizontal") * playerSpeed;
-        if (Input.GetKey(KeyCode.LeftShift) && ganbareru)
+        if (Input.GetKey(KeyCode.LeftShift)/* && ganbareru*/)
         {
             playerAnimator.SetBool("is_Running", true);
-            ganbaruTime -= Time.deltaTime;
+            /*ganbaruTime -= Time.deltaTime;
             ganbaru_gauge.fillAmount -= 0.2f * Time.deltaTime;
             if(ganbaruTime <= 0)
             {
                 ganbareru = false;
-            }
+            }*/
             trans.position += trans.TransformDirection(Vector3.forward) * Input.GetAxis("Vertical") * playerSpeed*2;
             trans.position += trans.TransformDirection(Vector3.right) * Input.GetAxis("Horizontal") * playerSpeed*2;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        /*if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             ganbareru = false;
-        }
+        }*/
     }
 
     void cameraCon()
