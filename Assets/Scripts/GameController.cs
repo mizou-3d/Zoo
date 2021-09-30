@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] AudioSource[] audioSource;
-    [SerializeField] AudioClip count;
+    [SerializeField] AudioSource audioSource1;
+    [SerializeField] AudioSource audioSource2;
 
     public Text timerText;
     float timer = 120;
 
     public GameObject countDown_Panel;
     public Text start_countDown;
-    float start_timer = 4f;
+    float start_timer = 3.0f;
     public bool isPlaying = false;
 
     public Text taskTx_1;
@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
     {
         taskTx_1.text = "ゴミひろい : " + trashNum + " / 10";
         taskTx_2.text = "えさやり : " + feedNum + " / 5";
+
+        StartCoroutine("Sound");
     }
 
     // Update is called once per frame
@@ -58,7 +60,6 @@ public class GameController : MonoBehaviour
         }
         if (isPlaying)
         {
-            //audioSource[1].Play();
             timer -= Time.deltaTime;
             timerText.text = timer.ToString("f2");
             if (timer <= 0)
@@ -96,5 +97,14 @@ public class GameController : MonoBehaviour
         gameManager.feed = feedNum;
 
         SceneManager.sceneLoaded -= GameSceneLoaded;
+    }
+
+    private IEnumerator Sound()
+    {
+        audioSource1.Play();
+
+        yield return new WaitForSeconds(4.0f);
+
+        audioSource2.Play();
     }
 }

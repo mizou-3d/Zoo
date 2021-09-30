@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimator.SetTrigger("PickTrash");
                 gameController.PlusTrash();
-                Destroy(other.gameObject, 2f);
+                Destroy(other.gameObject);
             }
             if (other.gameObject.tag == "FeedArea")
             {

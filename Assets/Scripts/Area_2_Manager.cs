@@ -11,6 +11,7 @@ public class Area_2_Manager : MonoBehaviour
     float stayTimer;
     public static int animal2;
     [SerializeField] GameObject mark;
+    [SerializeField] AudioSource alart;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class Area_2_Manager : MonoBehaviour
         if (goOut_2)
         {
             goTimer += Time.deltaTime;
-            if (goTimer >= 10)
+            if (goTimer >= 5)
             {
                 Destroy(animals_2[0]);
                 animals_2.RemoveAt(0);
@@ -44,12 +45,15 @@ public class Area_2_Manager : MonoBehaviour
             {
                 goOut_2 = true;
                 mark.SetActive(true);
+                alart.Play();
+                stayTimer = 0;
             }
         }
         if (other.gameObject.tag == "Player" || Input.GetKeyDown(KeyCode.Z))
         {
             goOut_2 = false;
             mark.SetActive(false);
+            alart.Stop();
         }
     }
 }
