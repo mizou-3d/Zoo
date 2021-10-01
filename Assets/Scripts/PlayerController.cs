@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             }
         }*/
 
-        if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("PickTrash") || playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Feed"))
+        if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("PickTrash") || playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Feed") || playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
         {
             playerSpeed = 0;
         }
@@ -127,6 +127,10 @@ public class PlayerController : MonoBehaviour
                 Destroy(other.gameObject);
             }
 
+        }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            playerAnimator.SetTrigger("Punching");
         }
     }
 }

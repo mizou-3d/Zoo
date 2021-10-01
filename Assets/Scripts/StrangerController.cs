@@ -13,6 +13,7 @@ public class StrangerController : MonoBehaviour
     public Animator strangerAnimator;
     GameObject backPosition;
     GameObject[] doorPositions = new GameObject[5];
+    public AudioSource angry;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +65,7 @@ public class StrangerController : MonoBehaviour
         if(other.gameObject.tag == "Player" && Input.GetKey(KeyCode.Q))
         {
             gohome = true;
+            angry.Play();
         }
     }
 }
