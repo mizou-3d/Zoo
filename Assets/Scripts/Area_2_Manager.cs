@@ -49,7 +49,7 @@ public class Area_2_Manager : MonoBehaviour
                 stayTimer = 0;
             }
         }
-        if (other.gameObject.tag == "Player" || Input.GetKeyDown(KeyCode.Z))
+        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Z))
         {
             goOut_2 = false;
             mark2.SetActive(false);

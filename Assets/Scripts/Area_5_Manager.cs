@@ -47,7 +47,7 @@ public class Area_5_Manager : MonoBehaviour
                 stayTimer = 0;
             }
         }
-        if (other.gameObject.tag == "Player" || Input.GetKeyDown(KeyCode.Z))
+        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Z))
         {
             goOut_5 = false;
             mark5.SetActive(false);

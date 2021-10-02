@@ -48,7 +48,7 @@ public class Area_4_Manager : MonoBehaviour
                 stayTimer = 0;
             }
         }
-        if (other.gameObject.tag == "Player" || Input.GetKeyDown(KeyCode.Z))
+        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Z))
         {
             goOut_4 = false;
             mark4.SetActive(false);
